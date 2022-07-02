@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@mixin btnstyle {
+    width: fit-content;
+        border-radius: 100%;
+        padding: 0.5rem;
+        border: none;
+        margin: 0.5rem;
+    
+        &:hover {
+            transform: scale(1.2);
+            transition: 0.5s all ease;
+            background: skyblue;
+            color: white;
+        }
+}
+@mixin flexcenter {
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
+@mixin gridcenter {
+      display: grid;
+    place-content: center;
+    place-items: center;
+}
+body{
+    background-color: #b7ebe8;
+}
+.culcontainer{
+    @include gridcenter;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    margin-top: 4.5rem;
+    width: 100%;
+    grid-template-columns: 2.5rem 1fr  2.5rem;   
+    ul{
+        display: flex;
+        z-index: 999;
+        justify-content: center;
+    }
+    li{
+        color: #7a7a7a;
+        width: 50px;
+    }
+   
+    .nextanime{
+        animation: anime ease-in-out 0.5s 0s 1;
+    }
+    .prevanime{
+        animation: animeprev ease-in-out 0.3s 0s 1;
+    }
+    .carocontent{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        bottom:4rem;
+        column-gap: 0.5rem;
+        text-transform: capitalize;
+        background: #38343487;
+        line-height: 1.5rem;
+        padding: 0.5rem;
+        text-align: center;
+        color: #fff;
+    }
+    .culcontainer{
+        overflow: hidden;
+        // width: 100%;
+    }
+    #curtimg{
+        width: 80vw ;
+        height: 50vw;
+        object-fit: cover;
+        box-shadow: 5px 5px 21px 0px rgba(154, 179, 237, 1);
+        max-width: 100%;
+    }
+    #btn{
+     @include btnstyle;
+    }
+}
+.active{
+    margin: 0.5rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 100%;
+   background-color: skyblue !important;
+}
+ #dotscontainer{
+    @include flexcenter;
+     max-width: 100%;
+     width: 100%;
+     .dots{
+         margin-bottom: 2.5rem;     
+         margin: 0.5rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 100%;
+         background: #333;
+     }
+ }
+ .header{
+    @include flexcenter;
+    background-color: skyblue;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    // margin: 2.5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    h2{
+        letter-spacing: 0.5rem;
+        font-weight: 900;
+        text-decoration: dotted;
+    }
+    
+ }
+@keyframes anime {
+    from{
+                transition: 0.3s all ease-in-out;
+                    transform: translateX(3rem);
+    }
+    to{
+                transition: 0.3s all ease-in-out;
+                    transform: translateX(1rem);
+    }
+}
+@keyframes animeprev {
+    from{
+                transition: 0.3s all ease-in-out;
+                    transform: translateX(-1rem);
+    }
+    to{
+                transition: 0.3s all ease-in-out;
+                    transform: translateX(1rem);
+    }
+}
+@media screen and (max-width:458px) {
+    .culcontainer{
+    height: 100vh;
+        }
+        #curtimg{
+            height: 90vw;
+            width: 100vw;
+            object-fit: cover;
+        }
+}
