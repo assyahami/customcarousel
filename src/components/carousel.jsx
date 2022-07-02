@@ -31,7 +31,7 @@ return (
               <img src={`${item.img}`}  alt="loading..." id="curtimg" />
               <div className="carocontent">
                 <span>{item.name}</span>
-                <button id="btn">view plan</button>
+                <button>view plan</button>
               </div>
         <div id="dotscontainer">
           {[...Array(5).keys()].map((item, I) => {
